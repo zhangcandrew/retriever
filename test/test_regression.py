@@ -51,7 +51,7 @@ download_md5 = [
 ]
 
 db_md5 = [
-    ('flensburg_food_web', '3f0e3c60b80f0bb9326e33c74076b14c'),
+    ('flensburg_food_web', '89c8ae47fb419d0336b2c22219f23793'),
     ('bird_size', '98dcfdca19d729c90ee1c6db5221b775'),
     ('mammal_masses', '6fec0fc63007a4040d9bbc5cfcd9953e')
 ]
@@ -71,11 +71,11 @@ fetch_tests = [
           None, None],
          ['node_id', 'species_id', 'stage_id', 'stage', 'species_stageid', 'workingname',
           'organismalgroup', 'nodetype', 'resolution', 'resolutionnotes', 'feeding',
-          'lifestylestage', 'lifestylespecies', 'consumerstrategystage', 'system',
+          'lifestylestage', 'lifestylespecies', 'consumerstrategystage', 'systems',
           'habitataffiliation', 'mobility', 'residency', 'nativestatus',
           'bodysize_g', 'bodysizeestimation', 'bodysizenotes', 'bodysizen',
           'biomass_kg_ha', 'biomassestimation', 'biomassnotes', 'kingdom', 'phylum',
-          'subphylum', 'superclass', 'class', 'subclass', 'ordered', 'suborder',
+          'subphylum', 'superclass', 'classes', 'subclass', 'ordered', 'suborder',
           'infraorder', 'superfamily', 'family', 'genus', 'specific_epithet', 'subspecies',
           'node_notes']
      ],
