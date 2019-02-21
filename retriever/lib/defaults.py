@@ -5,8 +5,11 @@ from retriever._version import __version__
 VERSION = __version__
 COPYRIGHT = "Copyright (C) 2011-2016 Weecology University of Florida"
 REPO_URL = "https://raw.github.com/weecology/retriever/"
+SCRIPTS_REPO_URL = "https://raw.github.com/zhangcandrew/retriever-scripts/"
 MASTER_BRANCH = REPO_URL + "master/"
+SCRIPTS_MASTER_BRANCH = SCRIPTS_REPO_URL + "master/"
 REPOSITORY = MASTER_BRANCH
+SCRIPTS_REPOSITORY = SCRIPTS_MASTER_BRANCH
 ENCODING = 'ISO-8859-1'
 HOME_DIR = os.path.expanduser('~/.retriever/')
 SCRIPT_SEARCH_PATHS = [

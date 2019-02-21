@@ -86,7 +86,7 @@ def reload_scripts():
                                      "Exception: {} \n"
                                      .format(script_name, search_path, str(e)))
     if global_script_list:
-        global_script_list.set_scripts(modules)
+        global_script_list.update_scripts(modules)
     return modules
 
 
@@ -176,6 +176,9 @@ class StoredScripts:
 
     def set_scripts(self, script_list):
         self._shared_scripts = script_list
+
+    def update_scripts(self, script_list):
+        self._shared_scripts.extend(set(self._shared_scripts) - set(script_list))
 
 
 global_script_list = StoredScripts()

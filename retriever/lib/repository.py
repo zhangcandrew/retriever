@@ -9,11 +9,11 @@ import requests
 import imp
 from tqdm import tqdm
 from pkg_resources import parse_version
-from retriever.lib.defaults import REPOSITORY, SCRIPT_WRITE_PATH, HOME_DIR
+from retriever.lib.defaults import REPOSITORY, SCRIPT_WRITE_PATH, HOME_DIR, SCRIPTS_REPOSITORY
 from retriever.lib.models import file_exists
 
 
-def _download_from_repository(filepath, newpath, repo=REPOSITORY):
+def _download_from_repository(filepath, newpath, repo=SCRIPTS_REPOSITORY):
     """Download latest version of a file from the repository."""
     try:
         r = requests.get(repo + filepath, allow_redirects=True, stream=True)
@@ -32,7 +32,7 @@ def check_for_updates():
     """
     try:
         # open version.txt for current release branch and get script versions
-        version_file = requests.get(REPOSITORY + "version.txt").text
+        version_file = requests.get(SCRIPTS_REPOSITORY + "version.txt").text
         version_file = version_file.splitlines()[1:]
 
         # read scripts from the repository and the checksums from the version.txt

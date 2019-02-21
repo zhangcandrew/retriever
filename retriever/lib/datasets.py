@@ -1,5 +1,6 @@
+import requests
 from retriever.lib.scripts import SCRIPT_LIST, get_script
-
+from retriever.lib.defaults import SCRIPTS_REPOSITORY
 
 def datasets(keywords=None, licenses=None):
     """Search all datasets by keywords and licenses."""
@@ -34,11 +35,14 @@ def datasets(keywords=None, licenses=None):
 
 def dataset_names():
     """Return list of all available dataset names."""
-    all_scripts = datasets()
+    version_file = requests.get(SCRIPTS_REPOSITORY + "version.txt").text
+    version_file = version_file.splitlines()[1:]
     scripts_name = []
 
-    for script in all_scripts:
-        scripts_name.append(script.name)
+    for line in version_file:
+        filename = line.strip('\n').split(',')[0]
+        clean_name = filename.split('.')[0].replace('_', '-')
+        scripts_name.append(clean_name)
 
     return scripts_name
 
